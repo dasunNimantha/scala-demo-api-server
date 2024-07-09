@@ -11,7 +11,7 @@ object WebServer {
   implicit val executionContext: ExecutionContextExecutor = system.executionContext
 
   def startServer(): Unit = {
-    val bindingFuture = Http().newServerAt("localhost", 8080).bind(routes)
+    val bindingFuture = Http().newServerAt("0.0.0.0", 8080).bind(routes)
 
     bindingFuture.onComplete {
       case Success(binding) =>
