@@ -7,7 +7,7 @@ object Routes extends JsonSupport {
   val routes: Route = concat(
     path("users") {
       get {
-        complete(RequestHandler.getUsers())
+        complete(RequestHandler.getUsers)
       }
     }
   )

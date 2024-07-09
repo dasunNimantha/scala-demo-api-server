@@ -16,8 +16,8 @@ libraryDependencies ++= Seq(
   "com.h2database" % "h2" % "2.2.224",
   "com.typesafe.slick" %% "slick" % "3.5.1",
   "com.typesafe.slick" %% "slick-hikaricp" % "3.5.1",
-  "io.kamon" %% "kamon-core" % kamonVersion,
   "io.kamon" %% "kamon-bundle" % kamonVersion,
+  "io.kamon" %% "kamon-jaeger" % "2.7.2",
   "ch.qos.logback" % "logback-classic" % "1.5.6",
 )
 

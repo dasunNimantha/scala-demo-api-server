@@ -21,4 +21,12 @@ object DB {
     db.run(users.result)
   }
 
+  def createUser(user: User)(implicit ctx: ExecutionContext): Future[Int] = {
+    db.run(users += user)
+  }
+
+  def deleteUser(id: Int)(implicit ctx: ExecutionContext): Future[Int] = {
+    db.run(users.filter(_.id === id).delete)
+  }
+
 }
