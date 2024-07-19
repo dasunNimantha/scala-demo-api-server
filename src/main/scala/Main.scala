@@ -1,4 +1,5 @@
 import DB.setupDB
+import RabbitMQ.setupRabbitMQ
 import kamon.Kamon
 
 import scala.concurrent.ExecutionContext.Implicits.global
@@ -13,6 +14,7 @@ object Main {
       case Failure(exception) => println(s"Database setup failed: ${exception.getMessage}")
     }
 
+    setupRabbitMQ()
     WebServer.startServer()
   }
 }

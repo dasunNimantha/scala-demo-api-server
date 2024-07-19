@@ -16,6 +16,7 @@ libraryDependencies ++= Seq(
   "com.typesafe.slick" %% "slick-hikaricp" % "3.5.1",
   "io.kamon" %% "kamon-bundle" % "2.7.3",
   "io.kamon" %% "kamon-jaeger" % "2.7.2",
+  "com.rabbitmq" % "amqp-client" % "5.21.0",
   "ch.qos.logback" % "logback-classic" % "1.5.6",
 )
 
