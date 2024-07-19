@@ -7,7 +7,7 @@ object RequestHandler {
   def getUsers: Future[Seq[UserData]] = {
     for {
       users <- DB.getUsers()
-      userData = users.map(user => UserData(user.id, user.name))
+      userData = span("user-mapper"){users.map(user => UserData(user.id, user.name))}
       _ <- sampleAsyncFunction()
     } yield userData
   }
@@ -17,6 +17,7 @@ object RequestHandler {
       for {
         _ <- DB.createUser(User(0, "sample"))
         _ = Thread.sleep(100)
+
       } yield ()
     }
   }
